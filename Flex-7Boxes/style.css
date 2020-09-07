@@ -1,0 +1,81 @@
+/* Let's start from creating common rules for our flex container: */
+
+.container {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+/* Colors! I loooooove colors! :) */
+
+.one {
+    background: #8a0081;
+    height: 100px;
+}
+
+.two {
+    background: #a000e2;
+    height: 100px;
+}
+
+.three {
+    background: #6b00ff;
+    height: 100px;
+}
+
+.four {
+    background: #009200;
+    height: 100px;
+}
+
+.five {
+    background: #edff00;
+    height: 100px;
+}
+
+.six {
+    background: #fe9100;
+    height: 100px;
+}
+
+.seven {
+    background: #ff0000;
+    height: 100px;
+}
+
+/* Let's create a really nice view for smartphones' users: */
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* And for tablet guys, please: */
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    .one, .two, .six, .seven {
+        flex-grow: 1;
+        flex-basis: 100%;
+    }
+    .three,.four,.five {
+        flex-basis: 33.3%;
+    }
+}
+
+/* Finally, here comes the version for the  oldschool-desktop people: */
+
+@media screen and (min-width: 801px) {
+    .one, .two {
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+
+    .six, .seven {
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+
+    .three,.four,.five {
+        flex-basis: 33.3%;
+    }
+}
